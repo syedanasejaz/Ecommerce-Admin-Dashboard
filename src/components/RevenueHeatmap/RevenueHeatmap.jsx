@@ -1,0 +1,27 @@
+export default function RevenueHeatmap() {
+  const days = Array.from({ length: 30 }, (_, i) => ({
+    day: i + 1,
+    value: Math.floor(Math.random() * 1000),
+  }));
+
+  return (
+    <div className="bg-white dark:bg-gray-800 p-4 shadow rounded-lg transition-colors duration-200">
+      <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
+        Revenue Heatmap
+      </h3>
+      <div className="grid grid-cols-6 gap-2">
+        {days.map((d) => (
+          <div
+            key={d.day}
+            className="w-10 h-10 text-xs flex items-center justify-center text-white rounded"
+            style={{
+              backgroundColor: `rgba(250, 129, 3, ${d.value / 1000})`,
+            }}
+          >
+            {d.day}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add this inside a base layer so Tailwind can parse it correctly */
+@layer base {
+  body {
+    @apply font-montserrat;
+  }
+}
