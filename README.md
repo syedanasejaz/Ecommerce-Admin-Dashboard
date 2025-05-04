@@ -2,6 +2,12 @@
 
 A modern, feature-rich admin dashboard for e-commerce platforms built with React, Vite, and Tailwind CSS.
 
+# USERS
+
+email: "admin@ecommerce.com", password: "password", role: "admin"
+email: "user@ecommerce.com", password: "userpass", role: "user"
+email: "manager@ecommerce.com", password: "managerpass", role: "manager"
+
 ## Features
 
 - 🌓 Dark/Light mode support
@@ -117,6 +123,18 @@ main.jsx
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run test` - Run tests
+
+### Test Coverage
+
+All test cases are passing successfully. The test suite includes:
+- Login functionality tests
+- Dashboard component tests
+- Product store management tests
+
+Current test coverage:
+✓ Login component tests (3/3)
+✓ Dashboard component tests (2/2)
+✓ Product store tests (4/4)
 
 ## Contributing
 
