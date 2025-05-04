@@ -72,6 +72,45 @@ src/
 └── utils/ # Utility functions
 \```
 
+### Architecture Overview
+
+main.jsx
+└── App.jsx
+├── Layouts/
+│ └── DashboardLayout
+├── Pages/
+│ ├── Dashboard/
+│ │ └── Dashboard.jsx
+│ ├── Login/
+│ │ └── Login.jsx
+│ └── Products/
+│ └── Products.jsx
+├── Components/
+│ ├── Button
+│ ├── DashboardCard
+│ ├── Header
+│ ├── Input
+│ ├── InventoryPieChart
+│ ├── KPISection
+│ ├── LiveOrderChart
+│ ├── ProductDescription
+│ ├── ProductTable
+│ ├── RevenueHeatmap
+│ └── Sidebar
+├── Store/ (Zustand)
+│ └── productStore.jsx
+├── Hooks/
+│ └── UseContext/
+│ └── ThemeContext.jsx
+├── Utils/
+│ ├── api.jsx
+│ ├── chartjs-setup.jsx
+│ └── mockProducts.jsx
+└── Assets/
+├── icons/
+├── images/
+└── logo/
+
 ## Available Scripts
 
 - `npm run dev` - Start development server

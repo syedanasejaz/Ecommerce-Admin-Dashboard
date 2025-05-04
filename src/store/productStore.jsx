@@ -7,13 +7,21 @@ const getInitialProducts = () => {
   return storedProducts ? JSON.parse(storedProducts) : generateMockProducts(100);
 };
 
-const useProductStore = create((set) => ({
+const useProductStore = create((set, get) => ({
   products: getInitialProducts(),
   filter: "",
   sortBy: "id",
   sortDirection: "asc",
   page: 1,
   pageSize: 10,
+
+  getFilteredProducts: () => {
+    const state = get();
+    if (!state.filter) return state.products;
+    return state.products.filter(p => 
+      p.name.toLowerCase().includes(state.filter.toLowerCase())
+    );
+  },
 
   setFilter: (filter) => set({ filter, page: 1 }),
   setSort: (sortBy) =>
