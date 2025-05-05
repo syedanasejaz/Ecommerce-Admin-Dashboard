@@ -26,17 +26,27 @@ export default function LiveOrderChart() {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top",
         labels: {
           color: darkMode ? "#e5e7eb" : "#374151",
+          padding: 10,
+          boxWidth: 12,
+          font: {
+            size: window.innerWidth < 768 ? 11 : 12,
+          },
         },
       },
       title: {
         display: true,
         text: "Live Orders Over Time",
         color: darkMode ? "#e5e7eb" : "#374151",
+        font: {
+          size: window.innerWidth < 768 ? 13 : 14,
+          weight: "normal",
+        },
       },
     },
     scales: {
@@ -46,6 +56,9 @@ export default function LiveOrderChart() {
         },
         ticks: {
           color: darkMode ? "#e5e7eb" : "#374151",
+          font: {
+            size: window.innerWidth < 768 ? 10 : 11,
+          },
         },
       },
       y: {
@@ -54,6 +67,9 @@ export default function LiveOrderChart() {
         },
         ticks: {
           color: darkMode ? "#e5e7eb" : "#374151",
+          font: {
+            size: window.innerWidth < 768 ? 10 : 11,
+          },
         },
       },
     },
@@ -82,8 +98,10 @@ export default function LiveOrderChart() {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow transition-colors duration-200">
-      <Line options={options} data={data} />
+    <div className="p-4 h-full flex flex-col">
+      <div className="flex-1 min-h-[250px]">
+        <Line options={options} data={data} />
+      </div>
     </div>
   );
 }

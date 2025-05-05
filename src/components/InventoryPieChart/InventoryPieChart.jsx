@@ -25,25 +25,30 @@ export default function InventoryPieChart() {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "bottom",
         labels: {
           color: darkMode ? "#e5e7eb" : "#374151",
+          padding: 15,
+          boxWidth: 15,
+          font: {
+            size: window.innerWidth < 768 ? 11 : 12,
+          },
         },
       },
     },
   };
 
   return (
-    <div
-      className="bg-white dark:bg-gray-800 p-4 shadow rounded-lg transition-colors duration-200"
-      style={{ width: "80%" }}
-    >
-      <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
+    <div className="p-4 h-full flex flex-col">
+      <h3 className="text-base sm:text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
         Inventory Status
       </h3>
-      <Pie data={data} options={options} />
+      <div className="flex-1 min-h-[250px]">
+        <Pie data={data} options={options} />
+      </div>
     </div>
   );
 }

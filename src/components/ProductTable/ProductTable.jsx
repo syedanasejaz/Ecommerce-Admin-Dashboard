@@ -51,7 +51,13 @@ const ProductTable = () => {
   const totalPages = Math.ceil(filtered.length / pageSize);
 
   const handleEdit = (id, key, value) => {
-    updateProduct(id, key, value);
+    // Convert numeric values
+    let processedValue = value;
+    if (key === "price" || key === "stock") {
+      processedValue = parseFloat(value) || 0;
+    }
+    // Update store which automatically saves to localStorage
+    updateProduct(id, key, processedValue);
   };
 
   const exportToExcel = () => {
@@ -104,20 +110,32 @@ const ProductTable = () => {
 
   return (
     <div className="p-4 bg-white dark:bg-gray-800 rounded shadow">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-2 mb-4">
         <input
           type="text"
           placeholder="Search product name..."
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="border dark:border-gray-600 px-3 py-2 rounded w-1/2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+          className="border dark:border-gray-600 px-3 py-2 rounded w-full sm:w-1/2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
         />
-        <div className="flex gap-2">
-          <Button onClick={exportToExcel} variant="primary" size="md">
-            Export to Excel
+        <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+          <Button
+            onClick={exportToExcel}
+            variant="primary"
+            size="md"
+            className="w-full sm:w-auto text-sm sm:text-base"
+          >
+            <span className="hidden sm:inline">Export to Excel</span>
+            <span className="sm:hidden">Export</span>
           </Button>
-          <Button onClick={openModal} variant="primary" size="md">
-            Add New Product
+          <Button
+            onClick={openModal}
+            variant="primary"
+            size="md"
+            className="w-full sm:w-auto text-sm sm:text-base"
+          >
+            <span className="hidden sm:inline">Add New Product</span>
+            <span className="sm:hidden">Add Product</span>
           </Button>
         </div>
       </div>
