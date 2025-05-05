@@ -10,17 +10,33 @@ email: "manager@ecommerce.com", password: "managerpass", role: "manager"
 
 ## Features
 
-- 🌓 Dark/Light mode support
+- 🌓 Dark/Light mode support with persistent theme storage
 - 📊 Real-time analytics and charts
-  - Inventory pie chart
-  - Live order tracking
-  - Revenue heatmap
+  - Inventory pie chart with stock status visualization
+  - Live order tracking with weekly trends
+  - Interactive revenue heatmap with daily data
+  - Animated KPI counters showing key metrics
 - 🏷️ Product management
-  - Product listing and details
+  - Product listing with sorting and filtering
+  - Inline product editing
+  - Bulk product export to Excel
   - AI-powered product description generator
+  - Real-time product stock tracking
 - 📈 KPI monitoring and metrics
+  - Total Orders tracking
+  - Revenue analytics
+  - Customer count
+  - Product inventory levels
 - 🔐 Secure authentication system
+  - Role-based access control (Admin, User, Manager)
+  - JWT token-based authentication
+  - Protected routes
+  - Automatic redirect to login
 - 📱 Responsive design
+  - Mobile-first approach
+  - Collapsible sidebar navigation
+  - Adaptive charts and tables
+  - Touch-friendly interface
 
 ## Tech Stack
 
@@ -40,7 +56,7 @@ email: "manager@ecommerce.com", password: "managerpass", role: "manager"
 
 1. Clone the repository:
    \```bash
-   git clone []
+   git clone ["https://github.com/syedanasejaz/Ecommerce-Admin-Dashboard.git"]
    cd admin-panel-ecommerce
    \```
 
@@ -117,6 +133,62 @@ main.jsx
 ├── images/
 └── logo/
 
+## UX Rationale
+
+### Design Philosophy
+
+- **Intuitive Navigation**: The sidebar-based navigation provides easy access to all major sections while maintaining a clean, uncluttered interface.
+- **Visual Hierarchy**: Important metrics and KPIs are prominently displayed at the top of the dashboard using animated counters to draw attention to critical business metrics.
+- **Consistent Design Language**: Uses a cohesive color scheme with primary (#FA8103) and secondary colors throughout the interface for better visual recognition.
+
+### Accessibility Features
+
+- **Dark/Light Mode**: Supports system preferences and manual toggling for better visibility in different lighting conditions.
+- **Responsive Typography**: Font sizes adapt to different screen sizes while maintaining readability.
+- **Color Contrast**: Ensures WCAG compliance with carefully selected color combinations.
+
+### User-Centric Features
+
+1. **Intelligent Data Visualization**
+
+   - Interactive charts that respond to user interactions
+   - Data-dense displays like heatmaps for complex information
+   - Real-time updates for live monitoring
+
+2. **Smart Product Management**
+
+   - Inline editing for quick updates
+   - Bulk actions for efficiency
+   - AI-assisted content generation
+   - Excel export for offline analysis
+
+3. **Responsive Design Considerations**
+
+   - Collapsible sidebar for mobile users
+   - Touch-friendly interface elements
+   - Adaptive charts that remain readable on small screens
+   - Mobile-first approach ensuring functionality across all devices
+
+4. **Error Prevention & Recovery**
+
+   - Form validation with clear error messages
+   - Confirmation dialogs for critical actions
+   - Automatic data saving
+   - Session management with secure authentication
+
+5. **Performance Optimizations**
+   - Lazy loading of components
+   - Optimized re-renders using React best practices
+   - Efficient state management with Zustand
+   - Cached theme preferences
+
+### User Feedback Integration
+
+- Animated interactions provide visual feedback
+- Loading states indicate system status
+- Toast notifications for action confirmations
+- Clear success/error states for user actions
+
 ## Available Scripts
 
 - `npm run dev` - Start development server
@@ -127,6 +199,7 @@ main.jsx
 ### Test Coverage
 
 All test cases are passing successfully. The test suite includes:
+
 - Login functionality tests
 - Dashboard component tests
 - Product store management tests
@@ -135,15 +208,3 @@ Current test coverage:
 ✓ Login component tests (3/3)
 ✓ Dashboard component tests (2/2)
 ✓ Product store tests (4/4)
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
