@@ -4,7 +4,7 @@ A modern, feature-rich admin dashboard for e-commerce platforms built with React
 
 # DEMO
 
-https://scintillating-caramel-b4f411.netlify.app/login
+https://scintillating-caramel-b4f411.netlify.app
 
 # USERS
 
