@@ -2,6 +2,10 @@
 
 A modern, feature-rich admin dashboard for e-commerce platforms built with React, Vite, and Tailwind CSS.
 
+# DEMO
+
+https://scintillating-caramel-b4f411.netlify.app/login
+
 # USERS
 
 email: "admin@ecommerce.com", password: "password", role: "admin"
